@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArchitectureFlow from "../../components/ArchitectureFlow";
+import { cases } from "../../data/site";
+
+const study = cases.find((item) => item.id === "order-processing")!;
+---
+
+<BaseLayout title={`${study.title} - Ximing Tao`}>
+  <section class="case-hero">
+    <p>Case Study {study.number}</p>
+    <h1>{study.title}</h1>
+    <span>{study.outcome}</span>
+  </section>
+
+  <section class="problem-stage">
+    <div>
+      <p>The Problem</p>
+      <h2>{study.problemTitle}</h2>
+    </div>
+    <div class="floating-terms">
+      {study.problemItems.map((item) => <span>{item}</span>)}
+    </div>
+  </section>
+
+  <section class="system-stage">
+    <div class="section-heading">
+      <p>The System</p>
+      <h2>Email to ERP, with every risky step made explicit.</h2>
+    </div>
+    <ol class="step-ladder">
+      {study.flow.map((step) => <li>{step}</li>)}
+    </ol>
+  </section>
+
+  <section class="architecture-stage">
+    <div class="section-heading">
+      <p>Architecture</p>
+      <h2>{study.architecture}</h2>
+    </div>
+    <ArchitectureFlow flow={study.flow} client:only="react" />
+  </section>
+
+  <section class="boundary-stage">
+    <div class="section-heading">
+      <p>Where AI Stops</p>
+      <h2>The system is designed around what the model should not decide.</h2>
+    </div>
+    <div class="boundary-grid">
+      <article>
+        <h3>AI</h3>
+        {study.ai.map((item) => <span>{item}</span>)}
+      </article>
+      <article>
+        <h3>Deterministic</h3>
+        {study.deterministic.map((item) => <span>{item}</span>)}
+      </article>
+    </div>
+  </section>
+</BaseLayout>

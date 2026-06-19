@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+import { profile } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${profile.name} - ${profile.role}`,
+  description = profile.headline,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="brand" aria-label="Ximing Tao home">
+        <span class="brand-mark">XT</span>
+        <span>{profile.name}</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/#selected-systems">Selected Systems</a>
+        <a href="/case-studies/order-processing/">Case 01</a>
+        <a href="/case-studies/controlled-knowledge-system/">Case 02</a>
+        <a href="/case-studies/document-intelligence/">Case 03</a>
+        <a href="/resume/">Resume</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <span>{profile.name}</span>
+      <span>AI Engineer</span>
+      <a href={profile.links.github}>GitHub</a>
+    </footer>
+  </body>
+</html>

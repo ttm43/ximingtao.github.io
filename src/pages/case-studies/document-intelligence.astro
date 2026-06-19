@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArchitectureFlow from "../../components/ArchitectureFlow";
+import { cases } from "../../data/site";
+
+const study = cases.find((item) => item.id === "document-intelligence")!;
+---
+
+<BaseLayout title={`${study.title} - Ximing Tao`}>
+  <section class="case-hero document-hero">
+    <p>Case Study {study.number}</p>
+    <h1>{study.title}</h1>
+    <span>{study.outcome}</span>
+  </section>
+
+  <section class="before-stage">
+    <div class="section-heading">
+      <p>Before LLMs</p>
+      <h2>OCR, layout, detection, extraction, and validation decide whether the model has usable context.</h2>
+    </div>
+    <ol class="step-ladder compact">
+      {study.problemItems.map((item) => <li>{item}</li>)}
+    </ol>
+  </section>
+
+  <section class="dataset-stage">
+    <strong>15,000</strong>
+    <h2>documents processed for dataset construction</h2>
+    <p>
+      Dataset quality came from repeatable parsing, reviewable extraction, and validation gates
+      rather than a single prompt.
+    </p>
+  </section>
+
+  <section class="architecture-stage">
+    <div class="section-heading">
+      <p>Layout Understanding</p>
+      <h2>{study.architecture}</h2>
+    </div>
+    <ArchitectureFlow flow={study.flow} client:only="react" />
+  </section>
+
+  <section class="cost-stage">
+    <span>Cloud Cost</span>
+    <h2>Down 60%</h2>
+    <p>Cost control came from routing: run expensive inference only where layout and validation signals justify it.</p>
+  </section>
+</BaseLayout>

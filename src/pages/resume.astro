@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile, resume } from "../data/site";
+---
+
+<BaseLayout title={`Resume - ${profile.name}`}>
+  <section class="resume-hero">
+    <div>
+      <p>{profile.role}</p>
+      <h1>{profile.name}</h1>
+      <span>{profile.headline}</span>
+    </div>
+    <button class="print-button" onclick="window.print()">Download PDF</button>
+  </section>
+
+  <section class="resume-section">
+    <h2>Experience</h2>
+    <div class="resume-list">
+      {resume.experience.map((item) => (
+        <article>
+          <div>
+            <h3>{item.title}</h3>
+            <span>{item.meta}</span>
+          </div>
+          <ul>
+            {item.points.map((point) => <li>{point}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Skills</h2>
+    <div class="skill-list">
+      {resume.skills.map((skill) => <span>{skill}</span>)}
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Education</h2>
+    <div class="resume-list">
+      {resume.education.map((item) => (
+        <article>
+          <p>{item}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

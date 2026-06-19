@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArchitectureFlow from "../../components/ArchitectureFlow";
+import { cases } from "../../data/site";
+
+const study = cases.find((item) => item.id === "controlled-knowledge-system")!;
+---
+
+<BaseLayout title={`${study.title} - Ximing Tao`}>
+  <section class="case-hero risk-hero">
+    <p>Case Study {study.number}</p>
+    <h1>{study.title}</h1>
+    <span>{study.outcome}</span>
+  </section>
+
+  <section class="risk-stage">
+    <p>The Risk</p>
+    <h2>Hallucination</h2>
+  </section>
+
+  <section class="understanding-stage">
+    <div class="section-heading">
+      <p>Structured Understanding</p>
+      <h2>A legal question is routed through intent, topic, jurisdiction, and confidence.</h2>
+    </div>
+    <div class="parse-grid">
+      {["Intent", "Topic", "Jurisdiction", "Confidence"].map((item) => (
+        <article>
+          <span>{item}</span>
+          <strong>{item === "Confidence" ? "Route or escalate" : "Extracted before answering"}</strong>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="architecture-stage">
+    <div class="section-heading">
+      <p>Verified Answer Retrieval</p>
+      <h2>{study.architecture}</h2>
+    </div>
+    <ArchitectureFlow flow={study.flow} client:only="react" />
+  </section>
+
+  <section class="fallback-stage">
+    <div>
+      <p>Human Fallback</p>
+      <h2>Uncertain = Escalate</h2>
+    </div>
+    <p>
+      The system treats weak evidence as a workflow condition. It does not ask the model to
+      sound confident when the retrieval layer cannot support the answer.
+    </p>
+  </section>
+</BaseLayout>
