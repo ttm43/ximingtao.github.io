@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroWorkflowPlayback from "../components/HeroWorkflowPlayback";
-import MetricsExplorer from "../components/MetricsExplorer";
-import SystemCardsInteractive from "../components/SystemCardsInteractive";
+import HeroVisual from "../components/HeroVisual";
 import { cases, intro, metrics, profile } from "../data/site";
 import { sitePath } from "../utils/paths";
 ---
@@ -17,7 +15,7 @@ import { sitePath } from "../utils/paths";
         {profile.focus.map((item) => <span>{item}</span>)}
       </div>
     </div>
-    <HeroWorkflowPlayback client:load />
+    <HeroVisual client:load />
   </section>
 
   <section class="intro-section">
@@ -33,13 +31,33 @@ import { sitePath } from "../utils/paths";
     </div>
   </section>
 
-  <MetricsExplorer metrics={metrics} client:load />
+  <section class="metric-band" aria-label="Selected metrics">
+    {metrics.map((metric) => (
+      <article>
+        <strong>{metric.value}</strong>
+        <h2>{metric.label}</h2>
+        <p>{metric.detail}</p>
+      </article>
+    ))}
+  </section>
 
   <section class="systems-section" id="selected-systems">
     <div class="section-heading">
       <p>Selected Systems</p>
       <h2>Three systems that show how ambiguous workflows become reliable AI products.</h2>
     </div>
-    <SystemCardsInteractive cases={cases} baseUrl={sitePath()} client:load />
+    <div class="systems-grid">
+      {cases.map((item) => (
+        <a class="system-card" href={sitePath(item.href)}>
+          <span class="case-number">Case Study {item.number}</span>
+          <h3>{item.title}</h3>
+          <p>{item.summary}</p>
+          <div class="tag-row">
+            {item.tags.slice(0, 4).map((tag) => <span>{tag}</span>)}
+          </div>
+          <strong>{item.outcome}</strong>
+        </a>
+      ))}
+    </div>
   </section>
 </BaseLayout>

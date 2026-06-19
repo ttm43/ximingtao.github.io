@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArchitectureFlow from "../../components/ArchitectureFlow";
-import OrderDemoMode from "../../components/OrderDemoMode";
 import { cases } from "../../data/site";
 
 const study = cases.find((item) => item.id === "order-processing")!;
@@ -12,10 +11,6 @@ const study = cases.find((item) => item.id === "order-processing")!;
     <p>Case Study {study.number}</p>
     <h1>{study.title}</h1>
     <span>{study.outcome}</span>
-  </section>
-
-  <section class="demo-section">
-    <OrderDemoMode client:load />
   </section>
 
   <section class="problem-stage">

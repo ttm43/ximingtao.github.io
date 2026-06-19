@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import PresentationMode from "../components/PresentationMode";
 import { profile } from "../data/site";
 import { sitePath } from "../utils/paths";
 
@@ -43,7 +42,6 @@ const {
     <main>
       <slot />
     </main>
-    <PresentationMode client:load />
     <footer class="site-footer">
       <span>{profile.name}</span>
       <span>AI Engineer</span>
