@@ -8,15 +8,15 @@ const study = cases.find((item) => item.id === "document-intelligence")!;
 
 <BaseLayout title={`${study.title} - Ximing Tao`}>
   <section class="case-hero document-hero">
-    <p>Case Study {study.number}</p>
+    <p>Product {study.number}</p>
     <h1>{study.title}</h1>
     <span>{study.outcome}</span>
   </section>
 
   <section class="before-stage">
     <div class="section-heading">
-      <p>Before LLMs</p>
-      <h2>OCR, layout, detection, extraction, and validation decide whether the model has usable context.</h2>
+      <p>Meet DocParse Engine</p>
+      <h2>Before reasoning, raw documents have to become structured, validated data.</h2>
     </div>
     <ol class="step-ladder compact">
       {study.problemItems.map((item) => <li>{item}</li>)}
@@ -25,7 +25,7 @@ const study = cases.find((item) => item.id === "document-intelligence")!;
 
   <section class="dataset-stage">
     <strong>15,000</strong>
-    <h2>documents processed for dataset construction</h2>
+    <h2>documents processed into training and evaluation data</h2>
     <p>
       Dataset quality came from repeatable parsing, reviewable extraction, and validation gates
       rather than a single prompt.
@@ -34,7 +34,7 @@ const study = cases.find((item) => item.id === "document-intelligence")!;
 
   <section class="architecture-stage">
     <div class="section-heading">
-      <p>Layout Understanding</p>
+      <p>Parsing Pipeline</p>
       <h2>{study.architecture}</h2>
     </div>
     <ArchitectureFlow flow={study.flow} client:only="react" />

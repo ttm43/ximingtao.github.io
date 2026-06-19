@@ -1,7 +1,9 @@
 export const profile = {
   name: "Ximing Tao",
   role: "AI Engineer",
-  headline: "Building reliable AI systems for real-world business workflows.",
+  headline: "Reliable AI systems for messy business workflows.",
+  launchSubheadline:
+    "I design AI products that turn emails, documents, questions, and clinical workflows into validated, reviewable actions.",
   focus: [
     "Workflow Automation",
     "Document Intelligence",
@@ -14,6 +16,41 @@ export const profile = {
     resumePdf: "XimingTao_resume.pdf",
   },
 };
+
+export const products = [
+  {
+    number: "01",
+    name: "OrderOps AI",
+    description: "From unstructured order emails to ERP-ready actions.",
+    href: "case-studies/order-processing/",
+    flow: ["Inbox", "Extract", "Validate", "Review", "Export"],
+    outcome: "70% eligible order automation",
+  },
+  {
+    number: "02",
+    name: "KnowledgeGuard AI",
+    description: "Legal answers controlled by verified retrieval and escalation rules.",
+    href: "case-studies/controlled-knowledge-system/",
+    flow: ["Question", "Intent", "Source", "Confidence", "Escalate"],
+    outcome: "70% reduction in manual legal review",
+  },
+  {
+    number: "03",
+    name: "DocParse Engine",
+    description: "Turning raw documents into structured, validated data.",
+    href: "case-studies/document-intelligence/",
+    flow: ["OCR", "Layout", "Extract", "Validate", "Dataset"],
+    outcome: "15,000 documents processed",
+  },
+  {
+    number: "04",
+    name: "ClinicFlow",
+    description: "Clinical assessment workflows from test results to patient reports.",
+    href: "resume/",
+    flow: ["Assess", "Recommend", "Draft", "Review", "Report"],
+    outcome: "Current healthcare workflow build",
+  },
+];
 
 export const intro = {
   title: "I build practical AI systems that solve real business problems.",
@@ -50,10 +87,10 @@ export const cases = [
   {
     id: "order-processing",
     number: "01",
-    title: "Order Processing System",
-    shortTitle: "Order Automation",
+    title: "OrderOps AI",
+    shortTitle: "OrderOps AI",
     summary:
-      "A workflow system that turns unstructured business requests into validated ERP-ready actions.",
+      "From unstructured order emails to ERP-ready actions.",
     outcome: "70% eligible order automation",
     href: "case-studies/order-processing/",
     tags: ["Email", "PDF", "Excel", "Validation", "ERP"],
@@ -68,10 +105,10 @@ export const cases = [
   {
     id: "controlled-knowledge-system",
     number: "02",
-    title: "Controlled Knowledge System",
-    shortTitle: "Legal Knowledge",
+    title: "KnowledgeGuard AI",
+    shortTitle: "KnowledgeGuard AI",
     summary:
-      "A legal knowledge workflow designed around verified retrieval, confidence thresholds, and escalation.",
+      "Legal answers controlled by verified retrieval and escalation rules.",
     outcome: "70% reduction in manual legal review",
     href: "case-studies/controlled-knowledge-system/",
     tags: ["Intent", "Topic", "Jurisdiction", "Confidence", "Escalation"],
@@ -86,10 +123,10 @@ export const cases = [
   {
     id: "document-intelligence",
     number: "03",
-    title: "Document Intelligence",
-    shortTitle: "Document AI",
+    title: "DocParse Engine",
+    shortTitle: "DocParse Engine",
     summary:
-      "A document pipeline built before LLM reasoning: OCR, layout detection, extraction, and validation.",
+      "Turning raw documents into structured, validated data.",
     outcome: "15,000 documents processed for dataset construction",
     href: "case-studies/document-intelligence/",
     tags: ["OCR", "Layout", "Detection", "Extraction", "Validation"],

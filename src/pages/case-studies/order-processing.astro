@@ -8,15 +8,15 @@ const study = cases.find((item) => item.id === "order-processing")!;
 
 <BaseLayout title={`${study.title} - Ximing Tao`}>
   <section class="case-hero">
-    <p>Case Study {study.number}</p>
+    <p>Product {study.number}</p>
     <h1>{study.title}</h1>
     <span>{study.outcome}</span>
   </section>
 
   <section class="problem-stage">
     <div>
-      <p>The Problem</p>
-      <h2>{study.problemTitle}</h2>
+      <p>Meet OrderOps AI</p>
+      <h2>From messy emails to ERP-ready orders.</h2>
     </div>
     <div class="floating-terms">
       {study.problemItems.map((item) => <span>{item}</span>)}
@@ -25,8 +25,8 @@ const study = cases.find((item) => item.id === "order-processing")!;
 
   <section class="system-stage">
     <div class="section-heading">
-      <p>The System</p>
-      <h2>Email to ERP, with every risky step made explicit.</h2>
+      <p>Workflow Console</p>
+      <h2>Every order moves through extraction, validation, review, and export as visible system state.</h2>
     </div>
     <ol class="step-ladder">
       {study.flow.map((step) => <li>{step}</li>)}
@@ -35,7 +35,7 @@ const study = cases.find((item) => item.id === "order-processing")!;
 
   <section class="architecture-stage">
     <div class="section-heading">
-      <p>Architecture</p>
+      <p>Built-in Validation</p>
       <h2>{study.architecture}</h2>
     </div>
     <ArchitectureFlow flow={study.flow} client:only="react" />
