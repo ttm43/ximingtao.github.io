@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArchitectureFlow from "../../components/ArchitectureFlow";
+import ConfidenceGateDemo from "../../components/ConfidenceGateDemo";
 import { cases } from "../../data/site";
 
 const study = cases.find((item) => item.id === "controlled-knowledge-system")!;
@@ -31,6 +32,14 @@ const study = cases.find((item) => item.id === "controlled-knowledge-system")!;
         </article>
       ))}
     </div>
+  </section>
+
+  <section class="demo-section">
+    <div class="section-heading">
+      <p>Confidence Gate</p>
+      <h2>The answer path changes when retrieval evidence becomes weak.</h2>
+    </div>
+    <ConfidenceGateDemo client:load />
   </section>
 
   <section class="architecture-stage">

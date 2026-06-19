@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArchitectureFlow from "../../components/ArchitectureFlow";
+import DocumentParsingDemo from "../../components/DocumentParsingDemo";
 import { cases } from "../../data/site";
 
 const study = cases.find((item) => item.id === "document-intelligence")!;
@@ -21,6 +22,14 @@ const study = cases.find((item) => item.id === "document-intelligence")!;
     <ol class="step-ladder compact">
       {study.problemItems.map((item) => <li>{item}</li>)}
     </ol>
+  </section>
+
+  <section class="demo-section">
+    <div class="section-heading">
+      <p>Document Viewer</p>
+      <h2>Parsing is a staged workflow before any downstream reasoning happens.</h2>
+    </div>
+    <DocumentParsingDemo client:load />
   </section>
 
   <section class="dataset-stage">
