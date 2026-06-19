@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { profile } from "../data/site";
+import { sitePath } from "../utils/paths";
 
 interface Props {
   title?: string;
@@ -20,22 +21,22 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={sitePath("favicon.svg")} />
+    <link rel="icon" href={sitePath("favicon.ico")} />
     <title>{title}</title>
   </head>
   <body>
     <header class="site-header">
-      <a href="/" class="brand" aria-label="Ximing Tao home">
+      <a href={sitePath()} class="brand" aria-label="Ximing Tao home">
         <span class="brand-mark">XT</span>
         <span>{profile.name}</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="/#selected-systems">Selected Systems</a>
-        <a href="/case-studies/order-processing/">Case 01</a>
-        <a href="/case-studies/controlled-knowledge-system/">Case 02</a>
-        <a href="/case-studies/document-intelligence/">Case 03</a>
-        <a href="/resume/">Resume</a>
+        <a href={sitePath("#selected-systems")}>Selected Systems</a>
+        <a href={sitePath("case-studies/order-processing/")}>Case 01</a>
+        <a href={sitePath("case-studies/controlled-knowledge-system/")}>Case 02</a>
+        <a href={sitePath("case-studies/document-intelligence/")}>Case 03</a>
+        <a href={sitePath("resume/")}>Resume</a>
       </nav>
     </header>
     <main>

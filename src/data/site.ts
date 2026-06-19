@@ -41,7 +41,7 @@ export const cases = [
     summary:
       "A workflow system that turns unstructured business requests into validated ERP-ready actions.",
     outcome: "70% eligible order automation",
-    href: "/case-studies/order-processing/",
+    href: "case-studies/order-processing/",
     tags: ["Email", "PDF", "Excel", "Validation", "ERP"],
     problemTitle: "Manual handling does not scale.",
     problemItems: ["Email", "PDF", "Excel", "Missing Information", "Wrong Price", "MOQ Issue"],
@@ -59,7 +59,7 @@ export const cases = [
     summary:
       "A legal knowledge workflow designed around verified retrieval, confidence thresholds, and escalation.",
     outcome: "70% reduction in manual legal review",
-    href: "/case-studies/controlled-knowledge-system/",
+    href: "case-studies/controlled-knowledge-system/",
     tags: ["Intent", "Topic", "Jurisdiction", "Confidence", "Escalation"],
     problemTitle: "Hallucination is the product risk.",
     problemItems: ["Hallucination", "Unsupported Answer", "Wrong Jurisdiction", "Low Confidence"],
@@ -77,7 +77,7 @@ export const cases = [
     summary:
       "A document pipeline built before LLM reasoning: OCR, layout detection, extraction, and validation.",
     outcome: "15,000 documents processed for dataset construction",
-    href: "/case-studies/document-intelligence/",
+    href: "case-studies/document-intelligence/",
     tags: ["OCR", "Layout", "Detection", "Extraction", "Validation"],
     problemTitle: "Before LLMs, the document has to become data.",
     problemItems: ["OCR", "Layout", "Detection", "Extraction", "Validation"],

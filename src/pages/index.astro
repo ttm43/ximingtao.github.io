@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroVisual from "../components/HeroVisual";
 import { cases, metrics, profile } from "../data/site";
+import { sitePath } from "../utils/paths";
 ---
 
 <BaseLayout>
@@ -34,7 +35,7 @@ import { cases, metrics, profile } from "../data/site";
     </div>
     <div class="systems-grid">
       {cases.map((item) => (
-        <a class="system-card" href={item.href}>
+        <a class="system-card" href={sitePath(item.href)}>
           <span class="case-number">Case Study {item.number}</span>
           <h3>{item.title}</h3>
           <p>{item.summary}</p>
