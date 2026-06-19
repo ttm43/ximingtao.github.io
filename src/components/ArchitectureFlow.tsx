@@ -34,21 +34,31 @@ export default function ArchitectureFlow({ flow }: Props) {
   }));
 
   return (
-    <div className="flow-shell">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        fitView
-        nodesDraggable={false}
-        nodesConnectable={false}
-        elementsSelectable={false}
-        panOnDrag={false}
-        zoomOnScroll={false}
-        zoomOnPinch={false}
-        proOptions={{ hideAttribution: true }}
-      >
-        <Background color="#d7dde8" gap={22} />
-      </ReactFlow>
+    <div>
+      <div className="flow-shell flow-shell-desktop">
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          fitView
+          nodesDraggable={false}
+          nodesConnectable={false}
+          elementsSelectable={false}
+          panOnDrag={false}
+          zoomOnScroll={false}
+          zoomOnPinch={false}
+          proOptions={{ hideAttribution: true }}
+        >
+          <Background color="#d7dde8" gap={22} />
+        </ReactFlow>
+      </div>
+      <ol className="flow-mobile-list">
+        {flow.map((step, index) => (
+          <li key={step}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{step}</strong>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }
