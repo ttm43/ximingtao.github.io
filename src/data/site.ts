@@ -9,9 +9,23 @@ export const profile = {
     "Human-in-the-loop AI",
   ],
   links: {
-    email: "mailto:",
+    email: "mailto:directortao@gmail.com",
     github: "https://github.com/ttm43",
+    resumePdf: "XimingTao_resume.pdf",
   },
+};
+
+export const intro = {
+  title: "I build practical AI systems that solve real business problems.",
+  body:
+    "I started in NLP and machine learning, working on automated English essay scoring. After moving to Australia, I worked on OCR and document intelligence systems. Over time I became more focused on integrating AI into real business workflows rather than only improving model performance.",
+  timeline: [
+    "NLP and automated essay scoring",
+    "OCR and document intelligence systems",
+    "Controlled legal knowledge retrieval",
+    "Sales order workflow automation",
+    "Clinical assessment and patient-report applications",
+  ],
 };
 
 export const metrics = [
@@ -90,38 +104,77 @@ export const cases = [
 ];
 
 export const resume = {
+  summary:
+    "AI Engineer with 5 years of experience building applied AI systems across workflow automation, document intelligence, RAG, structured extraction, and LLM evaluation. Strong at turning ambiguous business processes into structured rules, validation workflows, and deployable automation pipelines.",
   experience: [
     {
-      title: "AI Systems Engineering",
-      meta: "Workflow automation, document intelligence, and applied LLM systems",
+      title: "AI & Automation Engineer",
+      meta: "Xperience, Melbourne | Oct 2025 - May 2026",
       points: [
-        "Designed AI-assisted business workflows that combine unstructured input handling, deterministic validation, and human approval.",
-        "Built document processing pipelines covering OCR, layout understanding, extraction, validation, and dataset preparation.",
-        "Reduced inference cost through model routing, prompt constraints, batching, and selective generation.",
+        "Architected and delivered a cloud-hosted sales order automation platform using Power Automate triggers, Azure Container Apps, Azure Service Bus, SharePoint, PostgreSQL, and SFTP handoff.",
+        "Achieved around 70% fully automatic processing for eligible orders in production, saving each Sales Support user around two hours per day.",
+        "Separated LLM capabilities from deterministic workflow execution, keeping validation, approval, CSV generation, SFTP upload, and email dispatch controlled.",
       ],
     },
     {
-      title: "Applied AI Delivery",
-      meta: "Forward-deployed style implementation across ambiguous business processes",
+      title: "AI Engineer",
+      meta: "Freelance | Mar 2025 - Sep 2025; May 2026 - Present",
       points: [
-        "Translated unclear operational processes into auditable system flows and exception handling rules.",
-        "Implemented human-in-the-loop controls for uncertainty, approval, and escalation.",
-        "Focused on deployable systems rather than isolated model demos.",
+        "Extended a Next.js SaaS starter into a cost-aware document intelligence platform and reduced AI processing cost by over 80%.",
+        "Designed document classification, confidence-based escalation, prompt routing, structured extraction, validation logic, and error-handling flows.",
+        "Built AI-assisted workflow systems for scheduling, medical practice communication, structured notes, and patient-facing reports.",
+      ],
+    },
+    {
+      title: "Machine Learning Engineer",
+      meta: "Virtual Mike, Australia | Apr 2024 - Mar 2025",
+      points: [
+        "Built a controlled legal Q&A system that mapped real estate law enquiries to approved, versioned PostgreSQL answer records.",
+        "Implemented query understanding for legal topic, user intent, jurisdiction, timing, and uncertainty before retrieval.",
+        "Used ChromaDB, LangChain, and LangSmith to support verified retrieval, routing, evaluation, cost tracking, latency monitoring, and human fallback.",
+        "Reduced repetitive legal review effort by approximately 70% by routing common enquiries to verified content and escalating high-risk cases.",
+      ],
+    },
+    {
+      title: "Machine Learning Engineer",
+      meta: "Auxilis, Australia | Apr 2022 - Feb 2024",
+      points: [
+        "Developed a PaddleOCR-based document intelligence system for end-to-end layout analysis across tables, paragraphs, and titles.",
+        "Built a 15,000-sample training dataset using AWS Textract and Label Studio, improving layout parsing accuracy from 65% to 85%.",
+        "Implemented rule-based post-processors that pushed final extraction precision to 92% and reduced reliance on expensive cloud APIs by 60%.",
+        "Developed a Faster R-CNN table detector for challenging table structures, reaching 98% precision.",
+      ],
+    },
+    {
+      title: "Machine Learning Engineer",
+      meta: "Wuhan Purvar Bigdata Technology Co., Ltd., China | Jun 2020 - Sep 2021",
+      points: [
+        "Worked on an English essay auto-scoring system for long-form student writing.",
+        "Fine-tuned a BERT-based Transformer model for essay-level representations and tested regression and ranking-loss approaches for scoring consistency.",
       ],
     },
   ],
-  skills: [
-    "LLM workflow design",
-    "RAG architecture",
-    "OCR and document parsing",
-    "Human-in-the-loop AI",
-    "Python",
-    "TypeScript",
-    "Validation systems",
-    "Cost optimisation",
-    "System integration",
+  skillGroups: [
+    { title: "Languages", items: ["Python", "TypeScript/JavaScript", "SQL"] },
+    { title: "AI / LLM", items: ["RAG", "LangChain", "LangSmith", "ChromaDB", "Prompt Engineering", "Context Engineering", "LLM Evaluation"] },
+    { title: "ML / Document AI", items: ["OCR", "PaddleOCR", "Faster R-CNN", "OpenCV", "AWS Textract"] },
+    { title: "Full-stack & Automation", items: ["PostgreSQL", "REST APIs", "Django", "FastAPI", "Node.js", "React", "Next.js", "Power Automate", "n8n"] },
+    { title: "Cloud & DevOps", items: ["AWS", "Azure AI Document Intelligence", "Azure OpenAI Service", "Azure Functions", "Azure Container Apps", "Docker", "Git", "CI/CD"] },
   ],
   education: [
-    "Education details available in the PDF resume copy.",
+    {
+      degree: "Master of Information Technology",
+      school: "RMIT University, Australia",
+      years: "2023 - 2024",
+    },
+    {
+      degree: "Bachelor of Computer Science",
+      school: "Mingchuan University, Taiwan",
+      years: "2015 - 2020",
+    },
+  ],
+  licenses: [
+    "Full working rights in Australia",
+    "Australian driver licence",
   ],
 };

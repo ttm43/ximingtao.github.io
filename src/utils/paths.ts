@@ -1,6 +1,7 @@
 const base = import.meta.env.BASE_URL;
 
 export function sitePath(path = "") {
+  const root = base.endsWith("/") ? base : `${base}/`;
   const clean = path.replace(/^\/+/, "");
-  return `${base}${clean}`;
+  return `${root}${clean}`;
 }

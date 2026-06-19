@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { profile, resume } from "../data/site";
+import { sitePath } from "../utils/paths";
 ---
 
 <BaseLayout title={`Resume - ${profile.name}`}>
@@ -10,7 +11,12 @@ import { profile, resume } from "../data/site";
       <h1>{profile.name}</h1>
       <span>{profile.headline}</span>
     </div>
-    <button class="print-button" onclick="window.print()">Download PDF</button>
+    <a class="print-button" href={sitePath(profile.links.resumePdf)} download>Download PDF</a>
+  </section>
+
+  <section class="resume-section summary-section">
+    <h2>Summary</h2>
+    <p>{resume.summary}</p>
   </section>
 
   <section class="resume-section">
@@ -32,8 +38,15 @@ import { profile, resume } from "../data/site";
 
   <section class="resume-section">
     <h2>Skills</h2>
-    <div class="skill-list">
-      {resume.skills.map((skill) => <span>{skill}</span>)}
+    <div class="skill-groups">
+      {resume.skillGroups.map((group) => (
+        <article>
+          <h3>{group.title}</h3>
+          <div class="skill-list">
+            {group.items.map((skill) => <span>{skill}</span>)}
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
@@ -42,9 +55,20 @@ import { profile, resume } from "../data/site";
     <div class="resume-list">
       {resume.education.map((item) => (
         <article>
-          <p>{item}</p>
+          <div>
+            <h3>{item.degree}</h3>
+            <span>{item.school}</span>
+          </div>
+          <p>{item.years}</p>
         </article>
       ))}
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Other</h2>
+    <div class="skill-list">
+      {resume.licenses.map((item) => <span>{item}</span>)}
     </div>
   </section>
 </BaseLayout>
