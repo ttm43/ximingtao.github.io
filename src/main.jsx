@@ -32,6 +32,7 @@ import {
 import "./styles.css";
 
 const email = "directortao@gmail.com";
+const assetBase = import.meta.env.BASE_URL;
 
 const projects = [
   {
@@ -73,7 +74,7 @@ const clinicScreens = [
     id: "patients",
     label: "Patients",
     title: "Patient registry",
-    image: "/images/clinic-patients.jpg",
+    image: `${assetBase}images/clinic-patients.jpg`,
     description:
       "A searchable patient queue gives clinicians a clear starting point before opening an assessment or report workflow.",
     points: ["Patient code search", "Status visibility", "Clinician-ready queue"],
@@ -82,7 +83,7 @@ const clinicScreens = [
     id: "assessments",
     label: "Assessments",
     title: "Assessment tracking",
-    image: "/images/clinic-assessments.jpg",
+    image: `${assetBase}images/clinic-assessments.jpg`,
     description:
       "Active and historical assessments are organized by review state so clinicians can quickly find work in progress and approved sessions.",
     points: ["In-progress filtering", "Review readiness", "Historical context"],
@@ -91,7 +92,7 @@ const clinicScreens = [
     id: "reports",
     label: "Reports",
     title: "Report lifecycle",
-    image: "/images/clinic-reports.jpg",
+    image: `${assetBase}images/clinic-reports.jpg`,
     description:
       "Reports move through draft, approval, sharing, and revoke states without hiding the clinician approval step.",
     points: ["Draft visibility", "Approval control", "Shared report tracking"],
