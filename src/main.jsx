@@ -38,34 +38,38 @@ const projects = [
   {
     id: "orderops",
     title: "Sales Order Automation",
-    subtitle: "Interactive automation workflow",
+    subtitle: "Email, PDF, and Excel orders into AX-ready workflow outputs.",
     tags: ["AI Agent", "Automation", "Document AI", "Human Review"],
+    outcome: "70% automation for verified orders. 2h saved per user per day.",
     href: "#/projects/orderops",
     status: "Playable case study",
   },
   {
     id: "knowledge",
     title: "Legal QA Pipeline",
-    subtitle: "Controlled legal knowledge system",
-    tags: ["RAG", "Human Review", "Evaluation"],
+    subtitle: "Grounded legal Q&A with verified sources and controlled responses.",
+    tags: ["RAG", "Source Grounding", "Evaluation"],
+    outcome: "Verified answer records, confidence gates, and human fallback.",
     href: "#/projects/knowledgeguard",
-    status: "Coming next",
-  },
-  {
-    id: "docparse",
-    title: "DocParse Engine",
-    subtitle: "OCR, layout parsing, extraction",
-    tags: ["Document AI", "OCR", "Automation"],
-    href: "#/projects/docparse",
     status: "Coming next",
   },
   {
     id: "clinic",
     title: "ClinicFlow",
-    subtitle: "Clinical assessment workflow builder",
-    tags: ["Workflow", "Reports", "Human Review"],
+    subtitle: "Clinician-in-the-loop assessments, exercise drafts, and patient reports.",
+    tags: ["Healthcare Workflow", "Reports", "Human Review"],
+    outcome: "AI-assisted workflow without replacing clinical decision-making.",
     href: "#/projects/clinicflow",
     status: "Product walkthrough",
+  },
+  {
+    id: "docparse",
+    title: "DocParse Engine",
+    subtitle: "OCR, layout parsing, table detection, and structured extraction.",
+    tags: ["Document AI", "OCR", "Layout Parsing"],
+    outcome: "65% baseline to 92% post-processed layout accuracy.",
+    href: "#/projects/docparse",
+    status: "Technical foundation",
   },
 ];
 
@@ -102,7 +106,8 @@ const clinicScreens = [
 const capabilityColumns = [
   {
     title: "Build AI Systems",
-    intro: "Turning ambiguous inputs into structured, testable workflow state.",
+    intro:
+      "I turn messy inputs such as emails, PDFs, spreadsheets, and internal knowledge into structured, validated outputs that business systems can use safely.",
     items: [
       "Applied AI and LLM workflow design",
       "Document intelligence, OCR, and layout parsing",
@@ -113,7 +118,8 @@ const capabilityColumns = [
   },
   {
     title: "Ship Business Automation",
-    intro: "Connecting AI output to rules, approvals, integrations, and users.",
+    intro:
+      "I connect AI outputs to business rules, approvals, exception handling, APIs, queues, databases, and human review so the system can actually run in production.",
     items: [
       "Workflow automation across email, files, tickets, and reports",
       "Human-in-the-loop review paths for risky decisions",
@@ -257,11 +263,17 @@ function HomePage() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <h1>Designing reliable AI workflows for messy business operations.</h1>
+          <span className="hero-kicker">Ximing Tao / AI Engineer</span>
+          <h1>Reliable AI systems for real-world business workflows.</h1>
           <p>
-            AI Engineer building automation systems that turn emails, documents, and business
-            rules into validated, reviewable actions.
+            I design the AI layer, validation logic, human review paths, and integrations that
+            turn messy business inputs into usable workflow actions.
           </p>
+          <div className="hero-keywords" aria-label="Core focus areas">
+            {["Document Intelligence", "RAG", "Workflow Automation", "Human-in-the-loop AI", "Cloud Deployment"].map((keyword) => (
+              <span key={keyword}>{keyword}</span>
+            ))}
+          </div>
         </div>
         <HeroProjectDeck />
       </section>
@@ -320,6 +332,7 @@ function HeroProjectDeck() {
                 <span key={tag}>{tag}</span>
               ))}
             </div>
+            <strong className="deck-outcome">{project.outcome}</strong>
           </div>
         </a>
       ))}

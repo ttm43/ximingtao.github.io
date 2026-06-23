@@ -145,9 +145,37 @@ button {
   max-width: 860px;
 }
 
+.hero-kicker {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 840;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.hero-keywords span {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #475467;
+  font-size: 12px;
+  font-weight: 760;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
+}
+
 .hero-deck {
   position: relative;
-  min-height: clamp(530px, 32vw, 610px);
+  min-height: clamp(570px, 34vw, 640px);
   perspective: 1200px;
 }
 
@@ -298,7 +326,18 @@ button {
 }
 
 .deck-card .tag-list {
-  margin-bottom: 0;
+  margin: 16px 0 14px;
+}
+
+.deck-outcome {
+  display: block;
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 760;
+  line-height: 1.35;
 }
 
 .hero-summary {
@@ -2743,12 +2782,12 @@ button {
   }
 
   .hero-deck {
-    min-height: 500px;
+    min-height: 540px;
   }
 
   .deck-card {
     width: 300px;
-    min-height: 420px;
+    min-height: 440px;
   }
 
   .hero-deck .deck-card-1 {
